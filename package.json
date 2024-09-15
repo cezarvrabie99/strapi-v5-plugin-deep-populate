@@ -25,33 +25,19 @@
     },
     "dependencies": {
         "@mobily/ts-belt": "^3.13.1",
-        "@strapi/design-system": "^1.19.0",
-        "@strapi/helper-plugin": "^4.25.4",
-        "@strapi/icons": "^1.19.0",
         "yup": "^1.4.0"
     },
     "devDependencies": {
-        "@strapi/strapi": "^4.25.4",
-        "@strapi/typescript-utils": "^4.25.4",
-        "@types/react": "^18.3.3",
-        "@types/react-dom": "^18.3.0",
-        "@types/react-router-dom": "^5.3.3",
-        "@types/styled-components": "^5.1.32",
-        "@types/uuid": "^10.0.0",
-        "prettier": "^3.3.3",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-intl": "^6.6.8",
-        "react-router-dom": "^5.3.4",
-        "styled-components": "^5.3.3",
-        "typescript": "^5.5.3"
+      "@strapi/strapi": "5.0.0-rc.23"
     },
     "peerDependencies": {
-        "@strapi/strapi": "^4.25.4",
-        "react": "^18.3.1",
-        "react-dom": "^18.3.1",
-        "react-router-dom": "^5.2.0",
-        "styled-components": "^5.2.1"
+      "codemirror": "^6.0.0",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "react-router-dom": "^6.0.0",
+      "styled-components": "^6.0.0",
+      "koa": "2.13.4",
+      "typescript": "^5"
     },
     "strapi": {
         "kind": "plugin",
@@ -82,7 +68,7 @@
     "homepage": "https://github.com/magictm/strapi-plugin-deep-populate#readme",
     "keywords": [
         "strapi",
-        "strapi v4",
+        "strapi v5",
         "strapi plugin",
         "strapi deep populate",
         "magictm",
