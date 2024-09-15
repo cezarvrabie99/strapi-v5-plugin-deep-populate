@@ -1,10 +1,9 @@
-import type { Strapi } from '@strapi/strapi'
 import pluginId from './pluginId'
 
 import { getFullPopulateObject, validatePopulateIgnore } from './utils/utils'
 import { PluginConfig } from './config/schema'
 
-const bootstrap = ({ strapi }: { strapi: Strapi }) => {
+const bootstrap = ({ strapi }) => {
     // Get the plugin config
     const {
         minDepth,
@@ -14,7 +13,7 @@ const bootstrap = ({ strapi }: { strapi: Strapi }) => {
         allowedModels,
         ignoreFields,
         ignorePaths,
-    }: PluginConfig = strapi.config.get('plugin.' + pluginId)
+    }: PluginConfig = strapi.config.get('plugin::' + pluginId)
 
     strapi.db.lifecycles.subscribe((event) => {
         if (event.action === 'beforeFindMany' || event.action === 'beforeFindOne') {
@@ -22,7 +21,12 @@ const bootstrap = ({ strapi }: { strapi: Strapi }) => {
 
             debug && console.log(ctx?.request?.query) // Debug
 
-            const { populate } = event.params
+            let { deepPopulate } = event.params
+            if (!deepPopulate) {
+              return
+            }
+
+            deepPopulate = deepPopulate.split(',')
 
             const queryParams = ctx?.request?.query || {}
             const populateIgnoreFields = validatePopulateIgnore(queryParams.populateIgnore)
@@ -30,8 +34,8 @@ const bootstrap = ({ strapi }: { strapi: Strapi }) => {
 
             debug && console.log('populateIgnore', populateIgnoreFields) // Debug
 
-            if (populate && populate[0] === 'deep') {
-                let depth = parseInt(populate[1], 10) || minDepth
+            if (deepPopulate && deepPopulate[0] === 'deep') {
+                let depth = parseInt(deepPopulate[1], 10) || minDepth
 
                 // Limit the depth to the default depth if it's greater than the default depth
                 const limitedDepth = Math.min(depth, maxDepth)

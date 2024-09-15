@@ -6,6 +6,8 @@
         "rootDir": "../",
         "baseUrl": ".",
         "outDir": "./dist",
-        "incremental": false
+        "incremental": true,
+        "esModuleInterop": true,
+        "resolveJsonModule": true
     }
 }
