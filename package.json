@@ -1,5 +1,5 @@
 {
-    "version": "1.1.0",
+    "version": "1.0.0",
     "type": "commonjs",
     "exports": {
         "./strapi-server": {
@@ -16,10 +16,10 @@
         "strapi-server.js"
     ],
     "scripts": {
-        "build": "strapi plugin:build --force",
-        "watch": "strapi plugin:watch",
-        "watch:link": "strapi plugin:watch:link",
-        "verify": "strapi plugin:verify",
+        "build": "strapi-plugin build",
+        "watch": "strapi-plugin watch",
+        "watch:link": "strapi-plugin watch:link",
+        "verify": "strapi-plugin verify",
         "test:ts:back": "run -T tsc -p server/tsconfig.json",
         "npm:publish": "npm publish --access public"
     },
@@ -28,7 +28,10 @@
         "yup": "^1.4.0"
     },
     "devDependencies": {
-      "@strapi/strapi": "5.0.0-rc.23"
+      "@strapi/strapi": "5.0.0-rc.23",
+      "@strapi/types": "5.0.0-rc.23",
+      "@strapi/typescript-utils": "5.0.0-rc.23",
+      "@types/koa__router": "12.0.0"
     },
     "peerDependencies": {
       "codemirror": "^6.0.0",
@@ -45,7 +48,7 @@
         "displayName": "Deep populate by MagicTM (m7rlin)",
         "description": "Adds better deep populate support for Strapi."
     },
-    "name": "@magictm/strapi-plugin-deep-populate",
+    "name": "magictm-strapi-v5-plugin-deep-populate",
     "description": "Adds better deep populate support for Strapi.",
     "license": "MIT",
     "author": "Marcin Stawowczyk m7rlin <merlin@magictm.com>",

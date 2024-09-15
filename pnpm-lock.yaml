@@ -39,6 +39,15 @@ importers:
       '@strapi/strapi':
         specifier: 5.0.0-rc.23
         version: 5.0.0-rc.23(@babel/runtime@7.24.8)(@codemirror/autocomplete@6.17.0(@codemirror/language@6.10.2)(@codemirror/state@6.4.1)(@codemirror/view@6.28.6)(@lezer/common@1.2.1))(@codemirror/language@6.10.2)(@codemirror/lint@6.8.1)(@codemirror/search@6.5.6)(@codemirror/state@6.4.1)(@codemirror/theme-one-dark@6.1.2)(@codemirror/view@6.28.6)(@swc/helpers@0.5.12)(@types/hoist-non-react-statics@3.3.5)(@types/node@20.14.11)(@types/react-dom@18.3.0)(@types/react@18.3.3)(codemirror@6.0.1(@lezer/common@1.2.1))(koa@2.13.4)(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.26.2(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(redux@4.2.1)(styled-components@6.1.13(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(terser@5.31.3)(type-fest@4.26.1)
+      '@strapi/types':
+        specifier: 5.0.0-rc.23
+        version: 5.0.0-rc.23(@types/node@20.14.11)(typescript@5.4.4)
+      '@strapi/typescript-utils':
+        specifier: 5.0.0-rc.23
+        version: 5.0.0-rc.23
+      '@types/koa__router':
+        specifier: 12.0.0
+        version: 12.0.0
 
 packages:
 
@@ -1954,6 +1963,9 @@ packages:
 
   '@types/koa@2.15.0':
     resolution: {integrity: sha512-7QFsywoE5URbuVnG3loe03QXuGajrnotr3gQkXcEBShORai23MePfFYdhz90FEtBBpkyIYQbVD+evKtloCgX3g==}
+
+  '@types/koa__router@12.0.0':
+    resolution: {integrity: sha512-S6eHyZyoWCZLNHyy8j0sMW85cPrpByCbGGU2/BO4IzGiI87aHJ92lZh4E9xfsM9DcbCT469/OIqyC0sSJXSIBQ==}
 
   '@types/liftoff@2.5.1':
     resolution: {integrity: sha512-nB3R6Q9CZcM07JgiTK6ibxqrG1reiHE+UX7em/W1DKwVBxDlfKWOefQjk4jubY5xX+GDxVsWR2KD1SenPby8ow==}
@@ -8536,6 +8548,34 @@ snapshots:
       - tedious
       - typescript
 
+  '@strapi/types@5.0.0-rc.23(@types/node@20.14.11)(typescript@5.4.4)':
+    dependencies:
+      '@casl/ability': 6.5.0
+      '@koa/cors': 5.0.0
+      '@koa/router': 12.0.1
+      '@strapi/database': 5.0.0-rc.23(@types/node@20.14.11)
+      '@strapi/logger': 5.0.0-rc.23
+      '@strapi/permissions': 5.0.0-rc.23
+      '@strapi/utils': 5.0.0-rc.23
+      commander: 8.3.0
+      koa: 2.15.2
+      koa-body: 6.0.1
+      node-schedule: 2.1.1
+      typedoc: 0.25.10(typescript@5.4.4)
+      typedoc-github-wiki-theme: 1.1.0(typedoc-plugin-markdown@3.17.1(typedoc@0.25.10(typescript@5.4.4)))(typedoc@0.25.10(typescript@5.4.4))
+      typedoc-plugin-markdown: 3.17.1(typedoc@0.25.10(typescript@5.4.4))
+    transitivePeerDependencies:
+      - '@types/node'
+      - better-sqlite3
+      - mysql
+      - mysql2
+      - pg
+      - pg-native
+      - sqlite3
+      - supports-color
+      - tedious
+      - typescript
+
   '@strapi/typescript-utils@5.0.0-rc.23':
     dependencies:
       chalk: 4.1.2
@@ -8855,6 +8895,10 @@ snapshots:
       '@types/keygrip': 1.0.6
       '@types/koa-compose': 3.2.8
       '@types/node': 20.14.11
+
+  '@types/koa__router@12.0.0':
+    dependencies:
+      '@types/koa': 2.15.0
 
   '@types/liftoff@2.5.1':
     dependencies:
